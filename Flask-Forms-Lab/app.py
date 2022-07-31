@@ -12,6 +12,20 @@ username = "shahdkh"
 password = "123shahdkh"
 facebook_friends=["Shahd","Yaso","Mark", "Maher", "Fouad", "Celina"]
 
+facebook_friends.append("Rani")
+facebook_friends.append("Noura")
+facebook_friends.append("Nebal")
+facebook_friends.append("Lour")
+facebook_friends.append("Lotfeh")
+facebook_friends.append("Rawi")
+facebook_friends.append("Seran")
+facebook_friends.append("Laith")
+
+
+
+
+facebook_friends.remove("Mark" and "Celina")
+
 
 @app.route('/' ,  methods=['GET', 'POST'])# '/' for the default page
 def login():
@@ -29,6 +43,13 @@ def login():
 @app.route('/home')
 def home():
 	return render_template('home.html',facebook_friends = facebook_friends)
+
+@app.route('/friend_exists/<string:name>',  methods=['GET', 'POST'])
+def friend_exists(name):
+	return render_template('friend_exists.html',facebook_friends = facebook_friends , name = name )
+
+         
+  
          
   
 
